@@ -1,4 +1,3 @@
-
 function createRows(container, rowCount) {
   for (let i = 0; i < rowCount; i++) {
     const row = document.createElement('div');
@@ -17,14 +16,14 @@ function createCols(row, columnCount) {
 
 function createGrid(container, rowCount, columnCount) {
   createRows(container, rowCount);
-  const row = document.querySelector('.row');
-  createCols(row, columnCount);
+  const row = document.querySelectorAll('.row');
+  row.forEach(row => createCols(row, columnCount));
 }
 
 
 // Website script
 const container = document.querySelector('#container');
-const rowCount = 5;
-const columnCount = 5;
+const rowCount = 10;
+const columnCount = 10;
 
-createRows(container, rowCount);
+createGrid(container, rowCount, columnCount);
