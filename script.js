@@ -9,3 +9,5 @@ function createGrid(width, height) {
     container.appendChild(div);
   }
 }
+
+createGrid(gridWidth, gridHeight);
