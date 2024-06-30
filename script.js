@@ -1,16 +1,30 @@
-function createGrid(container, width, height) {
-  for (let i = 0; i < width * height; i++) {
-    const div = document.createElement('div');
-    div.classList.add('grid-item');
-    container.appendChild(div);
-    console.log('div created');
+
+function createRows(container, rowCount) {
+  for (let i = 0; i < rowCount; i++) {
+    const row = document.createElement('div');
+    row.classList.add('row');
+    container.appendChild(row);
   }
+}
+
+function createCols(row, columnCount) {
+  for (let i = 0; i < columnCount; i++) {
+    const col = document.createElement('div');
+    col.classList.add('col');
+    row.appendChild(col);
+  }
+}
+
+function createGrid(container, rowCount, columnCount) {
+  createRows(container, rowCount);
+  const row = document.querySelector('.row');
+  createCols(row, columnCount);
 }
 
 
 // Website script
-const container = document.querySelector('.container');
-const gridWidth = 16;
-const gridHeight = 16;
+const container = document.querySelector('#container');
+const rowCount = 5;
+const columnCount = 5;
 
-createGrid(container, gridWidth, gridHeight);
+createRows(container, rowCount);
