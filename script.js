@@ -22,8 +22,21 @@ function createGrid(container, rowCount, columnCount) {
 
 
 // Website script
-const container = document.querySelector('#container');
+const container = document.querySelector('#grid-area');
 const rowCount = 10;
 const columnCount = 10;
-
 createGrid(container, rowCount, columnCount);
+
+// Add click to color functionality
+document.querySelectorAll('.col').forEach(col => {
+  col.addEventListener('click', function() {
+    this.classList.toggle('clicked');
+  });
+});
+
+// Clear button
+document.querySelector('#clear').addEventListener('click', function() {
+  document.querySelectorAll('.col').forEach(col => {
+    col.classList.remove('clicked');
+  });
+});
