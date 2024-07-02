@@ -22,7 +22,7 @@ function createGrid(container, rowCount, columnCount) {
 
 
 // Website script
-const container = document.querySelector('#grid-area');
+const container = document.querySelector('#sketch-area');
 const rowCount = 10;
 const columnCount = 10;
 createGrid(container, rowCount, columnCount);
