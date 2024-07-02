@@ -30,7 +30,7 @@ createGrid(container, rowCount, columnCount);
 // Add click to color functionality
 document.querySelectorAll('.col').forEach(col => {
   col.addEventListener('click', function() {
-    this.classList.toggle('clicked');
+    this.classList.add('clicked');
   });
 });
 
